@@ -1,116 +1,185 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	
-	<meta charset="UTF-8"/>
-	<meta name="Portafolio de Kevin" content="web">
-	<link rel="icon" href="pc.ico">
-	<link rel="stylesheet" href="styleproyectos.css">
-	
-	<title>Portafolio de Kevin</title>
-	<script> 
-	//Vamos a ver cómo funciona
-	//NOTA: Le metí un poco de CSS arriba para que se viera mejor, al ponerle border a la tabla, th y td.
-	</script>
-		
-	<body>
-		<form>
-			
-			<label for="Idioma">Idioma</label>
-			<select name="Idioma" id="Idioma">
-				<option>Español</option>
-				<option>Inglés</option>
-				
-			</select>
-			
-		</form> <header>
-		<div class="titulo"><h1>Bienvenidos al sitio web de Kevin</h1></div> </header>
-			<nav>
-			<ul>
-			<b><li><a href="index.html">Inicio</a></li></b>
-			<b><li><a href="Videos.html">Videos</a></li></b>
-			<b><li><a href="Acerca de.html">Contacto</a></li></b>
-			<b><li><a href="Bibliografía.html">Bibliografía</a></li></b>
-			
-</ul> 
-		 
-	</nav>
-	<div>
-	<h2><strong>Proyectos personales:</strong></h2>
-	<p> <strong>Durante mi etapa de estudio, he realizado de manera personal y grupal, proyectos que me han ayudado a 
-		generar más interés por esta área. A continuación presento unos proyectos en los que he trabajado:</strong>
-	</p>
-</div>
-	
-	<div class="adplus">
-		<ol>
-			<li><a href="https://kevolive.github.io/AdministraPlus/"><strong>AdministraPlus</strong></a></li>
-			<li><a href="https://kevolive.github.io/web_course/"><strong>El tío programador</strong></a></li>
-			<li><a href="https://www.youtube.com/watch?v=jLi8Sjw9K2o"><strong>Video: Explicación de un ejercicio en java</strong></a></li>
-		
-	</ol>
-		</div>
-	<div>
-		<h3 class="titulo-3"> Acto seguido expongo de qué trata cada uno de los tres proyectos, y una vista previa de su contenido</h3>
-	</div>
-
-	<!-- //AdministraPlus -->
-	<div> <h3 class="titulo-adplus"><strong>1. AdministraPlus</strong></h3></div>
-		<!-- <div class="iframe">
-	<iframe src="https://kevolive.github.io/AdministraPlus/" width="100%" height="50%"></iframe>
-		</div> -->
-<!-- Acordeón de AdministraPlus -->
-
-<!-- Foto 1 -->
-		<div class="acordeon">
-			<div class="acordeon-item">
-				<div class="acordeon-header">Foto 1</div>
-				<div class="acordeon-contenido">
-					<img src="/Mi sitio web/img/administraPlus.jpg" alt="foto 1" width="50%" height="50%">
-				</div>
-			</div>
-		</div>
-<!-- foto 2 -->
-<div class="acordeon">
-	<div class="acordeon-item">
-		<div class="acordeon-header">Foto 2</div>
-		<div class="acordeon-contenido">
-			<img src="/Mi sitio web/img/administraPlus2.jpg" alt="foto 2" width="50%" height="50%">
-		</div>
-	</div>
-</div>
-
-<!-- Foto 3 -->
-<div class="acordeon">
-	<div class="acordeon-item">
-		<div class="acordeon-header">Foto 3</div>
-		<div class="acordeon-contenido">
-			<img src="/Mi sitio web/img/administraPlus3.jpg" alt="foto 3" width="50%" height="50%">
-		</div>
-	</div>
-</div>
-		<!-- El tío programador -->
-	<div>
-		<h3 class="titulo-tioprogramador"><strong>2. El tío Programador</strong></h3>
-	</div>
-	<div class="iframe">
-		<iframe src="https://kevolive.github.io/web_course/" width="100%" height="50%"></iframe>
-	</div>
-		<!-- EL video -->
-	<div>
-		<h3 class="video"><strong>3. Video: Explicación de un ejercicio en java</strong></h3>
-	</div>
-	<div class="iframe">
-		<iframe src="https://www.youtube.com/watch?v=jLi8Sjw9K2o" width="100%" height="50%"></iframe>
-	</div>	
-	
-	<footer>
-		Created by: Kevin olivella
-		<address>
-			
-			Correo: Kevinolivella@gmail.com
-	</footer>
-
-</body>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyectos - Portafolio de Kevin</title>
+  <meta name="description" content="Proyectos personales de Kevin Olivella. Detalles y previsualizaciones de mis trabajos.">
+  <link rel="icon" href="pc.ico">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Comportamiento básico del acordeón para mostrar/ocultar imágenes.
+    document.addEventListener("DOMContentLoaded", () => {
+      const headers = document.querySelectorAll(".accordion-header");
+      headers.forEach(header => {
+        header.addEventListener("click", () => {
+          const content = header.nextElementSibling;
+          content.classList.toggle("hidden");
+        });
+      });
+    });
+  </script>
 </head>
+<body class="bg-gray-950 text-white font-sans flex flex-col min-h-screen">
+  <!-- Encabezado -->
+  <header class="bg-gray-900 py-6 shadow">
+    <div class="container mx-auto text-center">
+      <h1 class="text-3xl font-bold">Bienvenidos al sitio web de Kevin</h1>
+    </div>
+  </header>
+  
+  <!-- Navegación -->
+  <nav class="bg-violet-500 text-black py-4">
+    <div class="container mx-auto">
+      <ul class="flex justify-center space-x-6 font-semibold">
+        <li><a href="index.html" class="hover:underline">Inicio</a></li>
+        <li><a href="Acerca de.html" class="hover:underline">Contacto</a></li>
+        <li><a href="Bibliografía.html" class="hover:underline">Bibliografía</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  
+<main class="flex-1 container mx-auto px-6 py-10">
+
+	
+	<section class="mb-10">
+	  <h2 class="text-2xl font-bold text-violet-500">Proyectos personales</h2>
+	  <p class="mt-4">
+		Durante mi etapa de estudio, he desarrollado proyectos personales y en equipo que me han permitido profundizar en mi pasión. A continuación, te presento algunos de mis trabajos:
+	  </p>
+	  <br>
+	  <div class="grid gap-6">
+		<li class="text-violet-400 hover:underline font-semibold">Proyectos con HTML, CSS y JS. Usando librerías como tailwindcss y Bootstrap:</li>
+	    
+	  
+		<ul class="list-decimal ml-6 mt-4 space-y-1">
+		  <li>
+			<a href="https://administraplus.netlify.app" target="_blank" class="text-violet-400 hover:underline font-semibold">
+			  AdministraPlus
+			</a>
+		  </li>
+		  <li>
+			<a href="https://kevolive.github.io/web_course/" target="_blank" class="text-violet-400 hover:underline font-semibold">
+			  El tío programador
+			</a>
+		  </li>
+		  <li>
+			<a href="https://www.youtube.com/watch?v=jLi8Sjw9K2o" target="_blank" class="text-violet-400 hover:underline font-semibold">
+			  Video: Explicación de un ejercicio en Java
+			</a>
+		  </li>
+		</ul>
+	  
+		
+	</section>
+  
+	<!-- Tarjetas de proyectos -->
+	<section class="grid md:grid-cols-3 gap-6">
+	  <!-- AdministraPlus -->
+	  <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition flex flex-col justify-between min-h-[300px]">
+		<div>
+		  <h3 class="text-xl font-bold text-violet-500 mb-2">AdministraPlus</h3>
+		  <p class="text-gray-300">Aplicación web para la gestión de tareas y proyectos. Desarrollada con HTML, JS y CSS.</p>
+		</div>
+		<a href="https://administraplus.netlify.app" target="_blank" class="mt-4 bg-violet-500 hover:bg-violet-600 text-white px-4 py-2 rounded text-center transition">
+		  Ver Proyecto
+		</a>
+	  </div>
+  
+	  <!-- El tío programador -->
+	  <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition flex flex-col justify-between min-h-[300px]">
+		<div>
+		  <h3 class="text-xl font-bold text-violet-500 mb-2">El tío programador</h3>
+		  <p class="text-gray-300">Una muestra de la aplicación web "El tío programador". Haz clic en el botón para ver más detalles.</p>
+		</div>
+		<a href="https://kevolive.github.io/web_course/" target="_blank" class="mt-4 bg-violet-500 hover:bg-violet-600 text-white px-4 py-2 rounded text-center transition">
+		  Ver Proyecto
+		</a>
+	  </div>
+  
+	  <!-- Video Java -->
+	  <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition flex flex-col justify-between min-h-[300px]">
+		<div>
+		  <h3 class="text-xl font-bold text-violet-500 mb-2">Video en Java</h3>
+		  <p class="text-gray-300">Video explicativo de un ejercicio práctico en Java, publicado en YouTube.</p>
+		</div>
+		<a href="https://www.youtube.com/watch?v=jLi8Sjw9K2o" target="_blank" class="mt-4 bg-violet-500 hover:bg-violet-600 text-white px-4 py-2 rounded text-center transition">
+		  Ver Video
+		</a>
+	  </div>
+	</section>
+</div>
+
+<!-- Segunda seccion de proyectos con Angular -->
+	  <div class="grid gap-6">
+		<li class="text-violet-400 hover:underline font-semibold">Proyectos realizados con Angular, usando librerías como Angular Material y PrimeNG:</li>
+	    
+	  
+		<ul class="list-decimal ml-6 mt-4 space-y-1">
+		  <li>
+			<a href="angularappcountry.netlify.app" target="_blank" class="text-violet-400 hover:underline font-semibold">
+			  Angular: App_Paises
+			</a>
+		  </li>
+		  <li>
+			<a href="xxxx" target="_blank" class="text-violet-400 hover:underline font-semibold">
+			  xxxxx
+			</a>
+		  </li>
+		  <li>
+			<a href="xxxxxxxx" target="_blank" class="text-violet-400 hover:underline font-semibold">
+			  xxxxx
+			</a>
+		  </li>
+		</ul>
+	  
+		
+	</section>
+  
+	<!-- Tarjetas de proyectos -->
+	<section class="grid md:grid-cols-3 gap-6">
+	  <!-- AdministraPlus -->
+	  <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition flex flex-col justify-between min-h-[300px]">
+		<div>
+		  <h3 class="text-xl font-bold text-violet-500 mb-2">AdministraPlus</h3>
+		  <p class="text-gray-300">Aplicación web para la gestión de tareas y proyectos. Desarrollada con HTML, JS y CSS.</p>
+		</div>
+		<a href="https://administraplus.netlify.app" target="_blank" class="mt-4 bg-violet-500 hover:bg-violet-600 text-white px-4 py-2 rounded text-center transition">
+		  Ver Proyecto
+		</a>
+	  </div>
+  
+	  <!-- El tío programador -->
+	  <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition flex flex-col justify-between min-h-[300px]">
+		<div>
+		  <h3 class="text-xl font-bold text-violet-500 mb-2">El tío programador</h3>
+		  <p class="text-gray-300">Una muestra de la aplicación web "El tío programador". Haz clic en el botón para ver más detalles.</p>
+		</div>
+		<a href="https://kevolive.github.io/web_course/" target="_blank" class="mt-4 bg-violet-500 hover:bg-violet-600 text-white px-4 py-2 rounded text-center transition">
+		  Ver Proyecto
+		</a>
+	  </div>
+  
+	  <!-- Video Java -->
+	  <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition flex flex-col justify-between min-h-[300px]">
+		<div>
+		  <h3 class="text-xl font-bold text-violet-500 mb-2">Video en Java</h3>
+		  <p class="text-gray-300">Video explicativo de un ejercicio práctico en Java, publicado en YouTube.</p>
+		</div>
+		<a href="https://www.youtube.com/watch?v=jLi8Sjw9K2o" target="_blank" class="mt-4 bg-violet-500 hover:bg-violet-600 text-white px-4 py-2 rounded text-center transition">
+		  Ver Video
+		</a>
+	  </div>
+	</section>
+</div>
+  </main>
+  
+  
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white text-center py-4">
+    <p class="text-sm">Created by: Kevin Olivella</p>
+    <p class="text-sm">Correo: <a href="mailto:Kevinolivella@gmail.com" class="text-violet-400 hover:underline">Kevinolivella@gmail.com</a></p>
+  </footer>
+</body>
 </html>
